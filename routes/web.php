@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 Route::resource('students', App\Http\Controllers\StudentController::class);
 Route::resource('exams', App\Http\Controllers\ExamController::class);
