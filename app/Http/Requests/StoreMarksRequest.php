@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreMarksRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function messages() {
+
+        $messages = [
+            'mark.*.required' => 'Please enter the mark',
+            'mark.*.numeric' => 'Please enter a valid mark',
+        ];
+    
+       
+        return $messages;
+    
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {  
+        return [
+            'student' => 'required',
+            'term' => 'required',
+            'mark.*' => 'required|numeric'
+        ];
+    }
+}
