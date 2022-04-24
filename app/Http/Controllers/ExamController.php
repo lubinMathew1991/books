@@ -20,7 +20,10 @@ class ExamController extends Controller
      */
     public function index()
     {
-        $exams = Exam::with('students', 'marks', 'marks.subject')->get()->toArray();
+        $exams = Exam::with('students', 'marks', 'marks.subject')
+                    ->orderBy('student_id')
+                    ->orderBy('id', 'desc')
+                    ->get()->toArray();
         $subjects = Subject::all();
 
         return view('exams.index', compact('exams', 'subjects'));
