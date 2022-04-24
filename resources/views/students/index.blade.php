@@ -49,8 +49,8 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td class="text-center" colspan="3">
-                                        There are no upcoming rides.
+                                    <td class="text-center" colspan="6">
+                                        There are nostudents.
                                     </td>
                                 </tr>
                             @endforelse

@@ -61,7 +61,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td class="text-center" colspan="3">
+                                    <td class="text-center" colspan="9">
                                         There are no exams
                                     </td>
                                 </tr>
