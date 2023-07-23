@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('books.index');
 });
 
 
-Route::resource('students', App\Http\Controllers\StudentController::class);
-Route::resource('exams', App\Http\Controllers\ExamController::class);
+
+Route::get('books/import', [BooksController::class, 'import'])->name('books.import');
+Route::post('books/import-save', [BooksController::class, 'importSave'])->name('books.importSave');
+
+Route::resource('books', BooksController::class);
+
