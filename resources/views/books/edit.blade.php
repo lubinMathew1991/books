@@ -61,7 +61,7 @@
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Publication Year') }}</label>
                             <div class="col-md-6">
-                                <input id="publication_year" type="text" class="form-control @error('publication_year') is-invalid @enderror" name="publication_year" value="{{ $book->publication_year ?? old('publication_year') }}">
+                                <input id="publication_year" type="number" class="form-control @error('publication_year') is-invalid @enderror" name="publication_year" value="{{ $book->publication_year ?? old('publication_year') }}">
                                 @error('publication_year')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

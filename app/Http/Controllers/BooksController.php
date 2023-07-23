@@ -41,7 +41,7 @@ class BooksController extends Controller
     public function store(StoreBooksRequest $request)
     {
         try {
-            if ($files = $request->file('cover_image')){  
+            if ($files = $request->file('cover_image')) {  
                 $coverImage = $files->getClientOriginalName();  
                 $files->move('cover_image', $coverImage);   
             }  
@@ -93,7 +93,7 @@ class BooksController extends Controller
     {
         try {
             $coverImage = $book->cover_image;
-            if ($files = $request->file('cover_image')){  
+            if ($files = $request->file('cover_image')) {  
                 $coverImage = $files->getClientOriginalName();  
                 $files->move('cover_image', $coverImage);   
             }  
