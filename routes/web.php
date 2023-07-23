@@ -18,8 +18,6 @@ Route::get('/', function () {
     return redirect()->route('books.index');
 });
 
-
-
 Route::get('books/import', [BooksController::class, 'import'])->name('books.import');
 Route::post('books/import-save', [BooksController::class, 'importSave'])->name('books.importSave');
 
