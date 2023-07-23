@@ -28,6 +28,7 @@ class UpdateBooksRequest extends FormRequest
             'author' => 'required|string',
             'description' => 'required',
             'publication_year' => 'integer|min:1|max:' . date("Y"),
+            'cover_image' => 'sometimes|required|mimes:png,jpg,jpeg|max:2048',
         ];
     }
 }
